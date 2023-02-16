@@ -1,8 +1,13 @@
-﻿using SimplifiedSlotMachine.Core;
+﻿using SimplifiedSlotMachine;
+using SimplifiedSlotMachine.Core;
 
 Console.WriteLine(GlobalConstants.PleaseDepositMoney);
-var depositAmount = Read.Input();
+var depositAmount = ReadFromConsole.DepositAmount();
 
-
+//Game:
+while (depositAmount > 0)
+{
+    
+}
 
 var x = 0;
