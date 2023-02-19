@@ -8,10 +8,17 @@ var depositAmount = ReadFromConsole.DepositAmount();
 while (depositAmount > 0)
 {
     var stakeAmount = ReadFromConsole.StakeAmount(depositAmount);
+    var rows = new List<ICollection<char>>();
 
     for (int i = 0; i < 4; i++)
     {
-        List<char> rolSymbols = new List<char>();
+        var row = Generator.GenerateRow();
+        rows.Add(row);
+    }
+
+    foreach (var row in rows)
+    {
+        Console.WriteLine(string.Join("", row));
     }
 }
 
