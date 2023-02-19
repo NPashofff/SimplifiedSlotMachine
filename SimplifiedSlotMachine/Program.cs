@@ -8,6 +8,7 @@ var depositAmount = ReadFromConsole.DepositAmount();
 while (depositAmount > 0)
 {
     var stakeAmount = ReadFromConsole.StakeAmount(depositAmount);
+    Console.WriteLine();
     var rows = new List<ICollection<char>>();
     decimal win = 0;
 
@@ -33,10 +34,8 @@ while (depositAmount > 0)
     {
         depositAmount += win;
     }
-
-    Console.WriteLine(win);
-    Console.WriteLine(depositAmount);
-
+    Console.WriteLine();
+    Console.WriteLine(GlobalConstants.YouHaveWon, win);
+    Console.WriteLine(GlobalConstants.CurrentBalance, depositAmount);
+    Console.WriteLine();
 }
-
-var x = 0;
