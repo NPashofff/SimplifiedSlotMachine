@@ -9,17 +9,34 @@ while (depositAmount > 0)
 {
     var stakeAmount = ReadFromConsole.StakeAmount(depositAmount);
     var rows = new List<ICollection<char>>();
+    decimal win = 0;
 
     for (int i = 0; i < 4; i++)
     {
         var row = Generator.GenerateRow();
         rows.Add(row);
+        Console.WriteLine(string.Join("", row));
+
+        var isWin = GameEngine.IsWining(row);
+        if (isWin)
+        {
+            var coefficient = GameEngine.CalculateWiningCoefficient(row);
+            win += coefficient * stakeAmount;
+        }
     }
 
-    foreach (var row in rows)
+    if (win == 0)
     {
-        Console.WriteLine(string.Join("", row));
+        depositAmount -= stakeAmount;
     }
+    else
+    {
+        depositAmount += win;
+    }
+
+    Console.WriteLine(win);
+    Console.WriteLine(depositAmount);
+
 }
 
 var x = 0;
