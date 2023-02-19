@@ -1,10 +1,30 @@
 ﻿namespace SimplifiedSlotMachine.Core
 {
-    public static class Read
+    public static class ReadFromConsole
     {
-        public static decimal Input()
+        public static decimal DepositAmount()
         {
-            //todo: While true is no good. Fix it
+            Console.WriteLine(GlobalConstants.PleaseDepositMoney);
+
+            return ValidateInput();
+        }
+
+        public static decimal StakeAmount(decimal depositAmount)
+        {
+            Console.WriteLine(GlobalConstants.EnterStakeAmount);
+
+            while (true)
+            {
+                var stakeAmount = ValidateInput();
+                if(depositAmount >= stakeAmount) return stakeAmount;
+
+                Console.WriteLine(GlobalConstants.NotEnoughMoney);
+            }
+
+        }
+
+        private static decimal ValidateInput()
+        {
             while (true)
             {
                 var input = Console.ReadLine();
