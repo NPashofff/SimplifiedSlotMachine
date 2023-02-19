@@ -7,9 +7,12 @@ var depositAmount = ReadFromConsole.DepositAmount();
 //Game:
 while (depositAmount > 0)
 {
-    var stakeAnmount = ReadFromConsole.StakeAmount(depositAmount);
+    var stakeAmount = ReadFromConsole.StakeAmount(depositAmount);
 
-    for
+    for (int i = 0; i < 4; i++)
+    {
+        List<char> rolSymbols = new List<char>();
+    }
 }
 
 var x = 0;

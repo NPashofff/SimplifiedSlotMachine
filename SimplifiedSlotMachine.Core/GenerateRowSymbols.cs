@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimplifiedSlotMachine.Core
+﻿namespace SimplifiedSlotMachine.Core
 {
-    internal class GenerateRowSymbols
+    public static class GenerateRowSymbols
     {
+
     }
 }
