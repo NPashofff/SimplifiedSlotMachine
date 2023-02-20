@@ -1,1 +1,1 @@
-# SimplifiedSlotMachine
+# Simplified Slot Machine
