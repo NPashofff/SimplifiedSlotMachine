@@ -1,7 +1,5 @@
 ﻿using SimplifiedSlotMachine;
-using SimplifiedSlotMachine.Core;
-
 
 var game = new Game();
-
+//Start Game
 game.Start();

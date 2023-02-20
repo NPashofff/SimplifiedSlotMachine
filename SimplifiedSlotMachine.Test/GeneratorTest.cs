@@ -2,7 +2,7 @@ using SimplifiedSlotMachine.Core;
 
 namespace SimplifiedSlotMachine.Test
 {
-    public class Tests
+    public class GeneratorTest
     {
         [SetUp]
         public void Setup()
@@ -14,6 +14,13 @@ namespace SimplifiedSlotMachine.Test
         {
            var row =  Generator.GenerateRow();
             Assert.That(row.Count == 3);
+        }
+
+        [Test]
+        public void NotNullTest()
+        {
+            var row = Generator.GenerateRow();
+            Assert.That(row is not null);
         }
     }
 }
