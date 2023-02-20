@@ -1,4 +1,6 @@
-﻿namespace SimplifiedSlotMachine.Core
+﻿using SimplifiedSlotMachine.Core;
+
+namespace SimplifiedSlotMachine
 {
     public static class ReadFromConsole
     {
