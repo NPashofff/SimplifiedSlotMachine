@@ -5,7 +5,7 @@
         private static readonly Random random = new Random();
         private const int TotalPercentage = 100;
 
-        private static readonly /*(char symbol, int percentage)[]*/ Dictionary<char, int> symbols = new()
+        private static readonly Dictionary<char, int> symbols = new()
         {
                 {'A', 45},
                 {'B', 35},
