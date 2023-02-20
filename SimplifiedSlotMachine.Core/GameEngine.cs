@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimplifiedSlotMachine.Core
+﻿namespace SimplifiedSlotMachine.Core
 {
     public static class GameEngine
     {
@@ -13,17 +7,17 @@ namespace SimplifiedSlotMachine.Core
             decimal result = 0;
             foreach (char c in row)
             {
-                if (c == 'A')
+                switch (c)
                 {
-                    result += 0.4m;
-                }
-                else if (c == 'B')
-                {
-                    result += 0.6m;
-                }
-                else if (c == 'P')
-                {
-                    result += 0.8m;
+                    case GlobalConstants.A:
+                        result += GlobalConstants.ACoefficient;
+                        break;
+                    case GlobalConstants.B:
+                        result += GlobalConstants.BCoefficient;
+                        break;
+                    case GlobalConstants.P:
+                        result += GlobalConstants.PCoefficient;
+                        break;
                 }
             }
             return result;
@@ -33,7 +27,7 @@ namespace SimplifiedSlotMachine.Core
         {
             var arr = row.ToArray();
 
-            for (int i = 0; i < arr.Length - 1; i++)
+            for (var i = 0; i < arr.Length - 1; i++)
             {
                 if (arr[i] != arr[i + 1]) return false;
             }

@@ -2,23 +2,16 @@
 {
     public static class Generator
     {
-        private static readonly Random random = new Random();
-        private const int TotalPercentage = 100;
-
-        private static readonly Dictionary<char, int> symbols = new()
-        {
-                {'A', 45},
-                {'B', 35},
-                {'P', 15},
-                {'*', 5 }
-        };
+        private static readonly Random Random = new Random();
+        private const int TotalPercentage = GlobalConstants.TotalPercentage;
+        private static readonly Dictionary<char, int> Symbols = GlobalConstants.Symbols;
 
         private static char GetRandomSymbol()
         {
-            var randomNumber = random.Next(TotalPercentage);
+            var randomNumber = Random.Next(TotalPercentage);
             var cumulativePercentage = 0;
 
-            foreach (var symbol in symbols)
+            foreach (var symbol in Symbols)
             {
                 cumulativePercentage += symbol.Value;
 
@@ -28,14 +21,14 @@
                 }
             }
 
-            return symbols.First().Key;
+            return Symbols.First().Key;
         }
 
         public static ICollection<char> GenerateRow()
         {
             var row = new char[3];
 
-            for (int i = 0; i < row.Length; i++)
+            for (var i = 0; i < row.Length; i++)
             {
                 row[i] = GetRandomSymbol();
             }

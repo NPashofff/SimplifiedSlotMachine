@@ -4,41 +4,40 @@ namespace SimplifiedSlotMachine
 {
     public class Game
     {
-        decimal depositAmount = ReadFromConsole.DepositAmount();
+        private decimal _depositAmount = ReadFromConsole.DepositAmount();
 
         public void Start()
         {
-            while (depositAmount > 0)
+            while (_depositAmount > 0)
             {
-                var stakeAmount = ReadFromConsole.StakeAmount(depositAmount);
+                var stakeAmount = ReadFromConsole.StakeAmount(_depositAmount);
                 WriteToConsole.EmptyRow();
                 var rows = new List<ICollection<char>>();
                 decimal win = 0;
 
-                for (int i = 0; i < 4; i++)
+                for (var i = 0; i < 4; i++)
                 {
                     var row = Generator.GenerateRow();
                     rows.Add(row);
                     WriteToConsole.WriteSpinRow(row);
 
                     var isWin = GameEngine.IsWining(row);
-                    if (isWin)
-                    {
-                        var coefficient = GameEngine.CalculateWiningCoefficient(row);
-                        win += coefficient * stakeAmount;
-                    }
+                    if (!isWin) continue;
+
+                    var coefficient = GameEngine.CalculateWiningCoefficient(row);
+                    win += coefficient * stakeAmount;
                 }
 
                 if (win == 0)
                 {
-                    depositAmount -= stakeAmount;
+                    _depositAmount -= stakeAmount;
                 }
                 else
                 {
-                    depositAmount += win;
+                    _depositAmount += win;
                 }
 
-                WriteToConsole.WriteWinAndBalance(win, depositAmount);
+                WriteToConsole.WriteWinAndBalance(win, _depositAmount);
             }
         }
     }
