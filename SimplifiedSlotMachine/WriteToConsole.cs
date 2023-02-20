@@ -1,6 +1,6 @@
 ﻿namespace SimplifiedSlotMachine.Core
 {
-    public class WriteToConsole : IWrite
+    public class WriteToConsole 
     {
         public static void WriteWinAndBalance(decimal win, decimal depositAmount)
         {
