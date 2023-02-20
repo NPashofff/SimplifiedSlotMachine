@@ -26,8 +26,8 @@
         {
             {A, APercentage},
             {B, BPercentage},
-            {P, P},
-            {Wc, WcPercentage }
+            {P, PPercentage},
+            {Wc, WcPercentage}
         };
     }
 }
