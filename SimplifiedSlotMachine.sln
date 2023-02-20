@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplifiedSlotMachine", "SimplifiedSlotMachine\SimplifiedSlotMachine.csproj", "{B369F538-A20C-4B60-A369-C7B051B5B89B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimplifiedSlotMachine", "SimplifiedSlotMachine\SimplifiedSlotMachine.csproj", "{B369F538-A20C-4B60-A369-C7B051B5B89B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplifiedSlotMachine.Core", "SimplifiedSlotMachine.Core\SimplifiedSlotMachine.Core.csproj", "{157CF14F-4939-4801-B3A7-1E5E7B4FD1EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimplifiedSlotMachine.Core", "SimplifiedSlotMachine.Core\SimplifiedSlotMachine.Core.csproj", "{157CF14F-4939-4801-B3A7-1E5E7B4FD1EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplifiedSlotMachine.Test", "SimplifiedSlotMachine.Test\SimplifiedSlotMachine.Test.csproj", "{8B985C04-0197-4B1A-9A8E-317F06647AE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{157CF14F-4939-4801-B3A7-1E5E7B4FD1EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{157CF14F-4939-4801-B3A7-1E5E7B4FD1EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{157CF14F-4939-4801-B3A7-1E5E7B4FD1EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B985C04-0197-4B1A-9A8E-317F06647AE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B985C04-0197-4B1A-9A8E-317F06647AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B985C04-0197-4B1A-9A8E-317F06647AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B985C04-0197-4B1A-9A8E-317F06647AE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

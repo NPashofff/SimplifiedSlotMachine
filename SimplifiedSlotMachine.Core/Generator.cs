@@ -5,30 +5,30 @@
         private static readonly Random random = new Random();
         private const int TotalPercentage = 100;
 
-        private static readonly (char symbol, int percentage)[] symbols =
+        private static readonly /*(char symbol, int percentage)[]*/ Dictionary<char, int> symbols = new()
         {
-                ('A', 45),
-                ('B', 35),
-                ('P', 15),
-                ('*', 5)
+                {'A', 45},
+                {'B', 35},
+                {'P', 15},
+                {'*', 5 }
         };
 
-        public static char GetRandomSymbol()
+        private static char GetRandomSymbol()
         {
-            int randomNumber = random.Next(TotalPercentage);
-            int cumulativePercentage = 0;
+            var randomNumber = random.Next(TotalPercentage);
+            var cumulativePercentage = 0;
 
             foreach (var symbol in symbols)
             {
-                cumulativePercentage += symbol.percentage;
+                cumulativePercentage += symbol.Value;
 
                 if (randomNumber < cumulativePercentage)
                 {
-                    return symbol.symbol;
+                    return symbol.Key;
                 }
             }
 
-            return symbols[symbols.Length - 1].symbol;
+            return symbols.First().Key;
         }
 
         public static ICollection<char> GenerateRow()
@@ -42,7 +42,5 @@
 
             return row;
         }
-
-
     }
 }

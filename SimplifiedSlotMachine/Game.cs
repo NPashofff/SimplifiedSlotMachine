@@ -11,7 +11,7 @@ namespace SimplifiedSlotMachine
             while (depositAmount > 0)
             {
                 var stakeAmount = ReadFromConsole.StakeAmount(depositAmount);
-                Console.WriteLine();
+                WriteToConsole.EmptyRow();
                 var rows = new List<ICollection<char>>();
                 decimal win = 0;
 
@@ -19,7 +19,7 @@ namespace SimplifiedSlotMachine
                 {
                     var row = Generator.GenerateRow();
                     rows.Add(row);
-                    Console.WriteLine(string.Join("", row));
+                    WriteToConsole.WriteSpinRow(row);
 
                     var isWin = GameEngine.IsWining(row);
                     if (isWin)
